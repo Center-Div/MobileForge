@@ -1,63 +1,59 @@
-import inquirer from "inquirer";
 import { exec } from "child_process";
 import chalk from "chalk";
 import ora from "ora";
-import { applyGitIgnoreChanges } from "./initializators/gitignoreUpdater.ts";
-import { setupPrettier } from "./initializators/prettierInit.ts";
-import { setupEslint } from "./initializators/eslintInit.ts";
 import path from "path";
+import { promisify } from "util";
+import { setupI18n } from "@inits/i18nInit";
+import { setupEslint } from "@inits/eslintInit";
+import { applyGitIgnoreChanges } from "@inits/gitignoreUpdater";
+import { setupPrettier } from "@inits/prettierInit";
+import { promptAppDetails } from "@inputs/forgeInputs";
 
-export function createExpoApp() {
-  const currentDir = process.cwd();
-  const parentDir = path.dirname(currentDir);
+const execPromise = promisify(exec);
+export async function createExpoApp(): Promise<void> {
+  try {
+    const { appName, appPath } = await promptAppDetails();
 
-  inquirer
-    .prompt([
-      {
-        type: "input",
-        name: "appName",
-        message: "What is the name of your new Expo app?",
-      },
-      {
-        type: "input",
-        name: "appPath",
-        message:
-          "Where do you want to create your new Expo app? (Provide full path)",
-        default: parentDir,
-      },
-    ])
-    .then(({ appName }) => {
-      const sanitizedAppPath = parentDir.trim(); // Use the parent directory path
-      const sanitizedAppName = appName.trim();
-      const fullPath = `${sanitizedAppPath}/${sanitizedAppName}`;
-      const command = `npx create-expo-app@latest "${fullPath}" --template blank-typescript`;
+    // Prepare paths
+    const sanitizedAppName = appName.trim();
+    const sanitizedAppPath = path.resolve(appPath.trim());
+    const fullPath = path.join(sanitizedAppPath, sanitizedAppName);
 
-      // Spinner setup
-      const spinner = ora({
-        text: "Creating a new Expo app...",
-        color: "cyan",
-      }).start();
+    // Spinner setup for creating the app
+    const spinner = ora({
+      text: "Creating a new Expo app...",
+      color: "cyan",
+    }).start();
 
-      // Run the command to create the Expo app
-      exec(command, (error) => {
-        if (error) {
-          spinner.fail("Failed to create the Expo app.");
-          console.error(
-            chalk.red("An error occurred while creating the Expo app:"),
-            error
-          );
-          return;
-        }
+    try {
+      // Run the Expo app creation command
+      await execPromise(
+        `npx create-expo-app@latest "${fullPath}" --template blank-typescript`
+      );
+      spinner.succeed("Expo app created successfully!\n");
+    } catch (error) {
+      spinner.fail("Failed to create the Expo app.");
+      console.error(chalk.red("Error creating Expo app:"), error);
+      return;
+    }
 
-        spinner.succeed("Expo app created successfully!");
+    // Apply additional configurations
+    const setupTasks = [
+      { name: "Updating .gitignore", action: applyGitIgnoreChanges },
+      { name: "Setting up Prettier", action: setupPrettier },
+      { name: "Setting up i18n", action: setupI18n },
+      { name: "Setting up ESLint", action: setupEslint },
+    ];
 
-        // Apply the .gitignore changes
-        applyGitIgnoreChanges(fullPath);
-        setupPrettier(fullPath);
-        setupEslint(fullPath);
-      });
-    })
-    .catch((error) => {
-      console.error(chalk.red("An error occurred:"), error);
-    });
+    for (const task of setupTasks) {
+      try {
+        await task.action(fullPath);
+      } catch (error) {
+        console.error(chalk.red(`Error during ${task.name}:`), error);
+        return;
+      }
+    }
+  } catch (error) {
+    console.error(chalk.red("An unexpected error occurred:"), error);
+  }
 }

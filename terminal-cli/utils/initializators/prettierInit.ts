@@ -1,39 +1,29 @@
-import fs from "fs";
-import path from "path";
-import chalk from "chalk";
-import ora from "ora";
+import * as fs from "fs";
+import * as path from "path";
+import { prettierConfig } from "@props/prettierProps";
+import { runTaskWithSubtasks } from "@fonctions/executingTasks";
 
-export function setupPrettier(appPath: string) {
-  const prettierConfig = {
-    arrowParens: "always",
-    bracketSpacing: true,
-    jsxSingleQuote: false,
-    quoteProps: "as-needed",
-    singleQuote: false,
-    semi: true,
-    printWidth: 100,
-    trailingComma: "es5",
-  };
+/**
+ * Sets up Prettier configuration for the application.
+ * @param appPath - The absolute path to the application directory.
+ */
 
-  const prettierConfigPath = path.join(appPath, ".prettierrc");
-  const eslintConfigPath = path.join(appPath, "eslint.config.mjs");
+export async function setupPrettier(appPath: string): Promise<void> {
+  const prettierConfigPath = path.resolve(appPath, ".prettierrc");
 
-  // Step 1: Set up Prettier configuration file (.prettierrc)
-  const prettierSpinner = ora({
-    text: "Setting up Prettier...",
-    color: "yellow",
-  }).start();
+  // Define subtasks for setting up Prettier
+  const subtasks = [
+    {
+      text: "Writing Prettier configuration file",
+      action: async () => {
+        fs.writeFileSync(
+          prettierConfigPath,
+          JSON.stringify(prettierConfig, null, 2),
+          "utf-8"
+        );
+      },
+    },
+  ];
 
-  try {
-    fs.writeFileSync(
-      prettierConfigPath,
-      JSON.stringify(prettierConfig, null, 2),
-      "utf-8"
-    );
-    prettierSpinner.succeed("Prettier configuration has been created.");
-  } catch (error) {
-    prettierSpinner.fail("Failed to create Prettier configuration.");
-    console.error(chalk.red("Error:"), error);
-    return;
-  }
+  await runTaskWithSubtasks("Setting up Prettier", subtasks);
 }

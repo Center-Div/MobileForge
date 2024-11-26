@@ -13,10 +13,16 @@
   "description": "",
   "dependencies": {
     "chalk": "^5.3.0",
+    "fs": "^0.0.1-security",
     "inquirer": "^12.1.0",
-    "ora": "^8.1.1"
+    "ora": "^8.1.1",
+    "path": "^0.12.7"
   },
   "devDependencies": {
-    "tsx": "^4.19.2"
+    "@babel/preset-env": "^7.26.0",
+    "@babel/preset-typescript": "^7.26.0",
+    "babel-plugin-module-resolver": "^5.0.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
   }
 }

@@ -1,7 +1,8 @@
 // menu.js
 import inquirer from "inquirer";
 import chalk from "chalk";
-import { createExpoApp } from "./utils/createExpoApp.ts";
+import { i18nFile } from "@props/i18nProps.ts";
+import { createExpoApp } from "utils/createExpoApp";
 
 function displayHeader() {
   console.log(
@@ -10,6 +11,8 @@ function displayHeader() {
     `)
   );
 }
+
+i18nFile;
 
 function showMenu() {
   inquirer
@@ -20,10 +23,6 @@ function showMenu() {
         message: "Please select an option:",
         choices: [
           { name: "Create a new Expo app", value: 1 },
-          { name: "Option 2", value: 2 },
-          { name: "Option 3", value: 3 },
-          { name: "Option 4", value: 4 },
-          { name: "Option 5", value: 5 },
           new inquirer.Separator(),
           { name: "Exit", value: "exit" },
         ],

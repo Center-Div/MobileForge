@@ -1,5 +1,5 @@
 TERMINAL_CLI_DIR=terminal-cli
 
 lauch:
-	cd $(TERMINAL_CLI_DIR) && npx tsx menu.ts
+	cd $(TERMINAL_CLI_DIR) && npm install && npx tsx menu.ts
 	

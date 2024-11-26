@@ -1,85 +1,21 @@
-import fs from "fs";
-import chalk from "chalk";
-import ora from "ora";
+import { runTaskWithSubtasks } from "@fonctions/executingTasks";
+import { gitignoreFile } from "@props/gitignoreProps";
+import * as fs from "fs";
 
-// Function to apply .gitignore changes to a specified path
-export function applyGitIgnoreChanges(path) {
-  const gitignoreContent = `
-# dependencies
-node_modules/
+/**
+ * Applies changes to the .gitignore file.
+ * @param path - The absolute path where the .gitignore file should be updated.
+ */
 
-# Expo
-.expo/
-dist/
-web-build/
-.idea/
+export async function applyGitIgnoreChanges(path: string): Promise<void> {
+  const subtasks = [
+    {
+      text: "Writing .gitignore content",
+      action: async () => {
+        fs.writeFileSync(`${path}/.gitignore`, gitignoreFile, "utf8");
+      },
+    },
+  ];
 
-
-# Native
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
-
-# debug
-npm-debug.*
-yarn-debug.*
-yarn-error.*
-
-# native builds
-android/
-ios/
-*.apk
-*.aab
-builds/
-google-services.json
-build-*.tar.gz
-
-
-# keystore
-credentials.json
-*.keystore
-!debug.keystore
-
-
-# macOS
-.DS_Store
-*.pem
-
-# local env files
-.env*.local
-.env.*
-!.env.example
-
-package-lock.json
-gql/
-
-# typescript
-*.tsbuildinfo
-database.types.ts
-
-
-#VS CODE
-.vscode/*
-!.vscode/settings.json
-`;
-
-  const spinner = ora({
-    text: "Updating .gitignore file...",
-    color: "cyan",
-  }).start();
-
-  try {
-    // Write the .gitignore file
-    fs.writeFileSync(`${path}/.gitignore`, gitignoreContent, "utf8");
-    spinner.succeed("Successfully updated .gitignore file.");
-  } catch (error) {
-    spinner.fail("Failed to update .gitignore.");
-    console.error(chalk.red("Error details:"), error);
-  }
+  await runTaskWithSubtasks("Updating .gitignore file", subtasks);
 }
