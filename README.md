@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3UxbXJuYWxiNjR4a3g0Zm50Z2JvbzUwN29pYWpvbHF3dTNrM3o4eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P96cmhDgYUNxu5BzUM/giphy.gif" alt="MobileForge Intro" width="100%" />
+  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3UxbXJuYWxiNjR4a3g0Zm50Z2JvbzUwN29pYWpvbHF3dTNrM3o4eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P96cmhDgYUNxu5BzUM/giphy.gif" alt="MobileForge Intro" width="90%" />
 </p>
 
 <h1 align="center">Mobile Forge</h1>
