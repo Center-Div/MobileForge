@@ -26,10 +26,7 @@
 <h1 align="center">Mobile Forge</h1>
 
 <p align="center">
-
-**MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.  
-Built using **React Native** and **Expo** for the frontend and powered by **Supabase** for the backend (including database, authentication tokens, and more), **MobileForge** provides a powerful, modular foundation that accelerates your development process while maintaining high standards for **code quality** and **performance**.
-
+MobileForge is an open-source starter template for building mobile apps quickly. Built Expo for the frontend, and powered by Supabase for the backend, it provides a modular foundation to accelerate development with high standards for code quality and performance.
 </p>
 
 ## ✨ **Current Features**
