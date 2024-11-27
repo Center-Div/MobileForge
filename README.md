@@ -25,26 +25,22 @@
 
 <h1 align="center">Mobile Forge</h1>
 
-**MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.
-Built using **React Native** and **Expo** for the frontend and powered by **Supabase** for the backend (including database, authentication tokens, and more), MobileForge provides a powerful, modular foundation that accelerates your development process while maintaining high standards for code quality and performance.
+<p align="center">
+**MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.  
+Built using **React Native** and **Expo** for the frontend and powered by **Supabase** for the backend (including database, authentication tokens, and more), **MobileForge** provides a powerful, modular foundation that accelerates your development process while maintaining high standards for **code quality** and **performance**.
+</p>
 
-## ✨ **Key Features**
+## ✨ **Current Features**
 
-- **🚀 Cross-Platform Ready**: Build once, deploy across iOS and Android for a seamless experience.
-- **🔧 Development Environments**: Separate environments for **development**, **staging**, and **production** with **Prettier** and **ESLint** configurations for consistent code quality.
-- **🌐 Multi-Language Support**: Easily initialize multilingual support, with tools for **text localization** and **date formatting** (WhereLang integration or equivalent).
-- **🔐 Authentification**: Multiple authentication methods available including **Password-based**, **OTP-based**, **Social Login**.
-- **🔗 Back-End Deployment**: Pre-configured to work with **Supabase**, providing a managed backend solution to streamline data management and authentication.
-- **⚡ Optimized Performance**: Code structured for efficient load times and smooth animations.
-- **📚 Detailed Documentation**: Extensive guides, code comments, and best practices to guide you every step of the way.
+- **🔧 ESLint Setup**: Pre-configured **ESLint** for consistent and error-free JavaScript/TypeScript code.
+- **🧹 Prettier Integration**: Automatically formats your code using **Prettier** for better readability and consistency.
+- **📂 Folder Structure**: Organized folder structure for scalability and maintainability.
+- **🛠️ Aliases**: Simplified module imports with **aliases** to avoid relative paths and improve code clarity.
+- **🌐 i18n Setup**: Easily initialize **internationalization (i18n)** for multilingual support, including **text localization** and **date formatting**.
 
 ---
 
-## 🚀 **Getting Started**
+## 🛠️ **Roadmap**
 
-### Prerequisites
-
-Make sure you have the following tools installed:
-
-- [Xcode](https://developer.apple.com/xcode/) (for iOS development) 🍎
-- [Android Studio](https://developer.android.com/studio) (for Android development) 🤖
+- **Backend as a Service (BaaS)**: Integration with **Supabase** to provide a fully managed backend solution for user management, database, and more.
+- **Social Authentication**: Adding **Google** and **Apple** login for social authentication.
