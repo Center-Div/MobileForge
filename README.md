@@ -1,8 +1,14 @@
 <p align="center">
-  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3UxbXJuYWxiNjR4a3g0Zm50Z2JvbzUwN29pYWpvbHF3dTNrM3o4eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P96cmhDgYUNxu5BzUM/giphy.gif" alt="MobileForge Intro" style="border-radius: 15px;" />
+  <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3UxbXJuYWxiNjR4a3g0Zm50Z2JvbzUwN29pYWpvbHF3dTNrM3o4eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P96cmhDgYUNxu5BzUM/giphy.gif" alt="MobileForge Intro" />
 </p>
 
-<h1 align="center">**MobileForge** 🔥📱</h1>
+<h1 align="center">Mobile Forge</h1>
+
+<p align="center">
+  <a href="CODE_OF_CONDUCT.md" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none; text-align: center;">
+    PRs: Welcome
+  </a>
+</p>
 
 **MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.
 Built using **React Native** and **Expo** for the frontend and powered by **Supabase** for the backend (including database, authentication tokens, and more), MobileForge provides a powerful, modular foundation that accelerates your development process while maintaining high standards for code quality and performance.
