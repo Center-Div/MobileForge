@@ -4,11 +4,8 @@
 
 <h1 align="center">Mobile Forge</h1>
 
-<p align="center">
-  <a href="CODE_OF_CONDUCT.md" style="display: inline-block; padding: 10px 20px; font-size: 16px; color: white; background-color: #007bff; border-radius: 5px; text-decoration: none; text-align: center;">
-    PRs: Welcome
-  </a>
-</p>
+[PRs: Welcome ✨](CODE_OF_CONDUCT.md)  
+
 
 **MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.
 Built using **React Native** and **Expo** for the frontend and powered by **Supabase** for the backend (including database, authentication tokens, and more), MobileForge provides a powerful, modular foundation that accelerates your development process while maintaining high standards for code quality and performance.
