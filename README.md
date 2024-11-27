@@ -1,6 +1,8 @@
 <p align="center">
   <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3UxbXJuYWxiNjR4a3g0Zm50Z2JvbzUwN29pYWpvbHF3dTNrM3o4eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P96cmhDgYUNxu5BzUM/giphy.gif" alt="MobileForge Intro" />
-	<h1 style="font-size: 3rem;">**MobileForge** 🔥📱</h1>
+</p>
+<p align="center">
+  <strong style="font-size: 2rem;">MobileForge 🔥📱</strong>
 </p>
 
 **MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.
