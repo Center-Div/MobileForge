@@ -22,7 +22,7 @@ export async function promptAppDetails(): Promise<{
       type: "input",
       name: "appPath",
       message:
-        "Where do you want to create your new Expo app? (Provide full path)",
+        "Where do you want to create your new Mobile App? (Provide full path)",
       default: path.dirname(process.cwd()),
       validate: (input) => {
         const resolvedPath = path.resolve(input.trim());

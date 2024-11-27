@@ -2,7 +2,7 @@
 import inquirer from "inquirer";
 import chalk from "chalk";
 import { i18nFile } from "@props/i18nProps.ts";
-import { createExpoApp } from "utils/createExpoApp";
+import { forgeNewApp } from "utils/forgeNewApp";
 
 function displayHeader() {
   console.log(
@@ -22,7 +22,7 @@ function showMenu() {
         name: "menuOption",
         message: "Please select an option:",
         choices: [
-          { name: "Create a new Expo app", value: 1 },
+          { name: "Forge a new Mobile App", value: 1 },
           new inquirer.Separator(),
           { name: "Exit", value: "exit" },
         ],
@@ -33,7 +33,7 @@ function showMenu() {
         console.log("Goodbye!");
         process.exit();
       } else if (answer.menuOption === 1) {
-        createExpoApp();
+        forgeNewApp();
       } else {
         console.log(`You selected Option ${answer.menuOption}`);
         showMenu();

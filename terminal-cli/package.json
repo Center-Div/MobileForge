@@ -1,16 +1,19 @@
 {
-  "name": "terminal-cli",
+  "name": "mobile-forge",
   "version": "1.0.0",
-  "main": "menu.ts",
+  "main": "index.ts",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ts-node --esm menu.ts"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "type": "module",
-  "author": "",
+  "bin": {
+    "mobile-forge": "index.js",
+    "ctpl": "index.js"
+  },
   "license": "ISC",
-  "description": "",
+  "files": [
+    "index.js",
+    "terminal-cli/*"
+  ],
   "dependencies": {
     "chalk": "^5.3.0",
     "fs": "^0.0.1-security",
