@@ -1,23 +1,23 @@
 {
   "name": "forge-expo-app",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Ficherman",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Center-Div/MobileForge"
+    "url": "git+https://github.com/Center-Div/MobileForge.git"
   },
   "scripts": {
     "lint": "tsc",
     "tsc": "tsc -p tsconfig.json",
     "dev": "tsx src/index.ts",
     "build": "tsup",
-    "upload": "npm bundle && npm publish"
+    "upload": "npm publish"
   },
   "type": "module",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "bin": {
-    "forge-expo-app": "./dist/index.js"
+    "forge-expo-app": "dist/index.js"
   },
   "files": [
     "dist"
