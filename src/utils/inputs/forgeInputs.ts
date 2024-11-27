@@ -23,7 +23,7 @@ export async function promptAppDetails(): Promise<{
       name: "appPath",
       message:
         "Where do you want to create your new Mobile App? (Provide full path)",
-      default: path.dirname(process.cwd()),
+      default: process.cwd(),
       validate: (input) => {
         const resolvedPath = path.resolve(input.trim());
         return fs.existsSync(resolvedPath)

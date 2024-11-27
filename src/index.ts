@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { showMenu } from "@fonctions/showMenu";
+import { showMenu } from "src/utils/cli/showMenu";
+import chalk from "chalk";
 
 function main(): Promise<void> {
   return new Promise((resolve, reject) => {
@@ -15,5 +16,5 @@ main()
     console.log("App ran successfully.");
   })
   .catch((error) => {
-    console.error("App encountered an error:", error);
+    console.error(chalk.red("An error occurred:"), error);
   });

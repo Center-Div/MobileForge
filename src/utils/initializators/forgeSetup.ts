@@ -22,7 +22,7 @@ export async function forgeSetup(fullPath: string) {
       await task.action(fullPath);
     } catch (error) {
       console.error(chalk.red(`Error during ${task.name}:`), error);
-      return;
+      throw new Error(`"Error creating Expo app: ${error}`);
     }
   }
 }

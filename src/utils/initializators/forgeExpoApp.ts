@@ -18,8 +18,7 @@ export async function forgeExpoApp(fullPath: string) {
     );
     spinner.succeed("Expo app created successfully!\n");
   } catch (error) {
-    spinner.fail("Failed to forge the Expo app.");
-    console.error(chalk.red("Error creating Expo app:"), error);
-    return;
+    spinner.fail("Failed to forge the Expo app.\n");
+    throw new Error(`${chalk.yellow(error)}`);
   }
 }
