@@ -2,6 +2,10 @@
   <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3UxbXJuYWxiNjR4a3g0Zm50Z2JvbzUwN29pYWpvbHF3dTNrM3o4eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P96cmhDgYUNxu5BzUM/giphy.gif" alt="MobileForge Intro" width="100%" />
 </p>
 
+[![MistaFish - MobileForge](https://img.shields.io/static/v1?label=MistaFish&message=MobileForge&color=blue&logo=github)](https://github.com/MistaFish/MobileForge "Go to GitHub repo")
+[![stars - MobileForge](https://img.shields.io/github/stars/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
+[![forks - MobileForge](https://img.shields.io/github/forks/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
+
 <h1 align="center">Mobile Forge</h1>
 
 **MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.
