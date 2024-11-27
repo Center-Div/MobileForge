@@ -24,13 +24,13 @@
 </table>
 
 
-## ✨ **Introduction**
+## 📖 **Introduction**
 
 MobileForge is an open-source, all-in-one starter template designed to help developers build mobile apps quickly and efficiently. Built with React Native and Expo for the frontend, and powered by Supabase for the backend (including database, authentication tokens, and more), MobileForge offers a powerful, modular foundation that accelerates development while maintaining high standards for code quality and performance.
 
 We aim to be THE ultimate Expo template, providing the perfect setup for a seamless development experience. We’re inviting React Native developers to join us in shaping the future of mobile app development.
 
-## ✨ **Current Features**
+## 🦄 **Current Features**
 
 - **🔧 ESLint Setup**: Pre-configured **ESLint** for consistent and error-free JavaScript/TypeScript code.
 - **🧹 Prettier Integration**: Automatically formats your code using **Prettier** for better readability and consistency.
