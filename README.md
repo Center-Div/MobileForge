@@ -3,12 +3,14 @@
 </p>
 
 <h1 align="center">Mobile Forge</h1>
-<p align="center">
-  [![CenterDiv - MobileForge](https://img.shields.io/static/v1?label=MistaFish&message=MobileForge&color=blue&logo=github)](https://github.com/MistaFish/MobileForge "Go to GitHub repo") 
-  &nbsp;&nbsp;     
-  [![stars - MobileForge](https://img.shields.io/github/stars/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
-  &nbsp;&nbsp;    
-  [![forks - MobileForge](https://img.shields.io/github/forks/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
+<p align="center"> 
+
+[![CenterDiv - MobileForge](https://img.shields.io/static/v1?label=MistaFish&message=MobileForge&color=blue&logo=github)](https://github.com/MistaFish/MobileForge "Go to GitHub repo")
+
+[![stars - MobileForge](https://img.shields.io/github/stars/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
+
+[![forks - MobileForge](https://img.shields.io/github/forks/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
+
 </p>
 
 **MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.
