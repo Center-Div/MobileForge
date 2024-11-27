@@ -2,6 +2,8 @@
   <img src="https://i.giphy.com/media/v1.Y2lkPTc5MGI3NjExZ3UxbXJuYWxiNjR4a3g0Zm50Z2JvbzUwN29pYWpvbHF3dTNrM3o4eiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/P96cmhDgYUNxu5BzUM/giphy.gif" alt="MobileForge Intro" width="100%" />
 </p>
 
+<h1 align="center">Mobile Forge</h1>
+
 <table align="center">
 <tbody>
 <tr>
@@ -22,12 +24,11 @@
 </table>
 
 
+## ✨ **Introduction**
 
-<h1 align="center">Mobile Forge</h1>
+MobileForge is an open-source, all-in-one starter template designed to help developers build mobile apps quickly and efficiently. Built with React Native and Expo for the frontend, and powered by Supabase for the backend (including database, authentication tokens, and more), MobileForge offers a powerful, modular foundation that accelerates development while maintaining high standards for code quality and performance.
 
-<p align="center">
-MobileForge is an open-source starter template for building mobile apps quickly. Built Expo for the frontend, and powered by Supabase for the backend, it provides a modular foundation to accelerate development with high standards for code quality and performance.
-</p>
+We aim to be THE ultimate Expo template, providing the perfect setup for a seamless development experience. We’re inviting React Native developers to join us in shaping the future of mobile app development.
 
 ## ✨ **Current Features**
 
@@ -36,8 +37,6 @@ MobileForge is an open-source starter template for building mobile apps quickly.
 - **📂 Folder Structure**: Organized folder structure for scalability and maintainability.
 - **🛠️ Aliases**: Simplified module imports with **aliases** to avoid relative paths and improve code clarity.
 - **🌐 i18n Setup**: Easily initialize **internationalization (i18n)** for multilingual support, including **text localization** and **date formatting**.
-
----
 
 ## 🛠️ **Roadmap**
 
