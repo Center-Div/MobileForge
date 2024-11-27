@@ -3,7 +3,8 @@
 </p>
 
 <h1 align="center">Mobile Forge</h1>
-<p align="center"> 
+
+<div align="center"> 
 
 [![CenterDiv - MobileForge](https://img.shields.io/static/v1?label=MistaFish&message=MobileForge&color=blue&logo=github)](https://github.com/MistaFish/MobileForge "Go to GitHub repo")
 
@@ -11,7 +12,7 @@
 
 [![forks - MobileForge](https://img.shields.io/github/forks/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
 
-</p>
+</div>
 
 **MobileForge** is an open-source, all-in-one starter template for building mobile apps quickly and efficiently.
 Built using **React Native** and **Expo** for the frontend and powered by **Supabase** for the backend (including database, authentication tokens, and more), MobileForge provides a powerful, modular foundation that accelerates your development process while maintaining high standards for code quality and performance.
