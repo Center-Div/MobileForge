@@ -1,30 +1,46 @@
 {
-  "name": "mobile-forge",
-  "version": "1.0.0",
-  "main": "index.ts",
+  "name": "forge-expo-app",
+  "version": "0.0.2",
+  "author": "Ficherman",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Center-Div/MobileForge"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "tsc",
+    "tsc": "tsc -p tsconfig.json",
+    "dev": "tsx src/index.ts",
+    "build": "tsup",
+    "upload": "npm bundle && npm publish"
   },
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
   "bin": {
-    "mobile-forge": "index.js",
-    "ctpl": "index.js"
+    "forge-expo-app": "./dist/index.js"
   },
-  "license": "ISC",
   "files": [
-    "index.js",
-    "terminal-cli/*"
+    "dist"
   ],
+  "license": "ISC",
   "dependencies": {
+    "@effect/platform": "^0.69.27",
+    "@effect/platform-node": "^0.64.29",
     "chalk": "^5.3.0",
+    "effect": "^3.10.18",
     "fs": "^0.0.1-security",
     "inquirer": "^12.1.0",
     "ora": "^8.1.1",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "ts-node": "^10.9.2"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.0",
     "@babel/preset-typescript": "^7.26.0",
+    "@types/node": "^22.10.0",
     "babel-plugin-module-resolver": "^5.0.2",
+    "prompts": "^2.4.2",
+    "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }

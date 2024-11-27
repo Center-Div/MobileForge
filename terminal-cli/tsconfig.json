@@ -1,22 +1,19 @@
 {
   "compilerOptions": {
-    "baseUrl": ".", // Root is terminal-cli
-    "paths": {
-      "@props/*": ["./utils/props/*"],
-      "@fonctions/*": ["./utils/fonctions/*"],
-      "@inputs/*": ["./utils/inputs/*"],
-      "@inits/*": ["./utils/initializators/*"]
-    },
-    "outDir": "./dist", // Output directory for compiled files (optional)
-    "moduleResolution": "node",
-    "target": "esnext",
-    "module": "esnext",
-    "strict": true,
+    "target": "es2016",
     "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
     "skipLibCheck": true,
+    "moduleResolution": "node",
     "noEmit": true,
-    "allowImportingTsExtensions": true
-  },
-  "include": ["./**/*.ts", "./**/*.tsx"],
-  "exclude": ["node_modules", "./dist"]
+    "allowImportingTsExtensions": true,
+    "baseUrl": ".",
+    "paths": {
+      "@props/*": ["src/utils/props/*"],
+      "@fonctions/*": ["src/utils/fonctions/*"],
+      "@inputs/*": ["src/utils/inputs/*"],
+      "@inits/*": ["src/utils/initializators/*"]
+    }
+  }
 }

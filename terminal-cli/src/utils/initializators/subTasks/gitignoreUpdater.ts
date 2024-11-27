@@ -1,5 +1,5 @@
-import { runTaskWithSubtasks } from "@fonctions/executingTasks";
-import { gitignoreFile } from "@props/gitignoreProps";
+import { runTaskWithSubtasks } from "src/utils/fonctions/executingTasks";
+import { gitignoreFile } from "src/utils/props/gitignoreProps";
 import * as fs from "fs";
 
 /**

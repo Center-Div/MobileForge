@@ -1,7 +1,7 @@
 import * as fs from "fs";
 import * as path from "path";
-import { prettierConfig } from "@props/prettierProps";
-import { runTaskWithSubtasks } from "@fonctions/executingTasks";
+import { prettierConfig } from "src/utils/props/prettierProps";
+import { runTaskWithSubtasks } from "src/utils/fonctions/executingTasks";
 
 /**
  * Sets up Prettier configuration for the application.

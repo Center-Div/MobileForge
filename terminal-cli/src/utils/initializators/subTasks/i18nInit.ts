@@ -1,13 +1,13 @@
 import * as path from "path";
 import * as fs from "fs";
-import { execPromise } from "@fonctions/execPromise";
-import { runTaskWithSubtasks } from "@fonctions/executingTasks";
+import { execPromise } from "src/utils/fonctions/execPromise";
+import { runTaskWithSubtasks } from "src/utils/fonctions/executingTasks";
 import {
   enTranslation,
   frTranslation,
   i18nFile,
   i18nPackages,
-} from "@props/i18nProps";
+} from "src/utils/props/i18nProps";
 
 /**
  * Sets up i18n configuration for the application.

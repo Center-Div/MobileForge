@@ -1,9 +1,8 @@
 import chalk from "chalk";
-import { promptAppDetails } from "@inputs/forgeInputs";
-import { cleaningPath } from "@fonctions/cleaningPath";
-import { forgeExpoApp } from "@inits/forgeExpoApp";
-import { forgeSetup } from "@inits/forgeSetup";
-
+import { promptAppDetails } from "src/utils/inputs/forgeInputs";
+import { cleaningPath } from "src/utils/fonctions/cleaningPath";
+import { forgeExpoApp } from "src/utils/initializators/forgeExpoApp";
+import { forgeSetup } from "src/utils/initializators/forgeSetup";
 
 export async function forgeNewApp(): Promise<void> {
   try {

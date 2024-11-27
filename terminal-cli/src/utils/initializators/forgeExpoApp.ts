@@ -1,4 +1,4 @@
-import { execPromise } from "@fonctions/execPromise";
+import { execPromise } from "src/utils/fonctions/execPromise";
 import { promisify } from "util";
 import chalk from "chalk";
 import ora from "ora";

@@ -1,8 +1,8 @@
 import * as fs from "fs";
 import * as path from "path";
-import { eslintFile, eslintPackages } from "@props/eslintProps";
-import { execPromise } from "@fonctions/execPromise";
-import { runTaskWithSubtasks } from "@fonctions/executingTasks";
+import { eslintFile, eslintPackages } from "src/utils/props/eslintProps";
+import { execPromise } from "src/utils/fonctions/execPromise";
+import { runTaskWithSubtasks } from "src/utils/fonctions/executingTasks";
 
 /**
  * Sets up ESLint configuration in the specified application path.
