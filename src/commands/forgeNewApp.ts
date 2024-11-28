@@ -1,7 +1,7 @@
-import { cleaningPath } from "@fonctions/cleaningPath";
-import { forgeExpoApp } from "@inits/forgeExpoApp";
-import { forgeSetup } from "@inits/forgeSetup";
-import { promptAppDetails } from "@inputs/forgeInputs";
+import { cleaningPath } from "src/utils/cleaningPath";
+import { promptAppDetails } from "@cli/forgeInputs";
+import { forgeExpoApp } from "./forgeExpoApp";
+import { forgeSetup } from "./forgeSetup";
 
 export async function forgeNewApp(): Promise<void> {
   const { appName, appPath } = await promptAppDetails();

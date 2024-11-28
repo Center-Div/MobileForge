@@ -1,12 +1,12 @@
 import * as fs from "fs";
 import * as path from "path";
-import { runTaskWithSubtasks } from "src/utils/fonctions/executingTasks";
 import {
   aliasesPath,
   babelConfigContent,
   indexContent,
   srcFolders,
-} from "src/utils/props/aliasesProps";
+} from "@config/aliasesProps";
+import { runTaskWithSubtasks } from "@utils/executingTasks";
 
 /**
  * Sets up the src folder structure and configures Babel and TypeScript aliases.

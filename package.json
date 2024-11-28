@@ -2,6 +2,13 @@
   "name": "forge-expo-app",
   "version": "0.0.3",
   "author": "Ficherman",
+  "keywords": [
+    "expo",
+    "supabase",
+    "template",
+    "mobile",
+    "application"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Center-Div/MobileForge.git"

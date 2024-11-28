@@ -1,7 +1,6 @@
+import { forgeNewApp } from "@commands/forgeNewApp";
 import inquirer from "inquirer";
-import { forgeNewApp } from "../forgeNewApp";
 
-// This function handles the menu and returns a promise
 export function showMenu(): Promise<void> {
   return new Promise((resolve, reject) => {
     inquirer

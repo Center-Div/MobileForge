@@ -1,9 +1,9 @@
 import chalk from "chalk";
-import { setupSrcFolder } from "./subTasks/aliasesInit";
-import { setupEslint } from "./subTasks/eslintInit";
-import { applyGitIgnoreChanges } from "./subTasks/gitignoreUpdater";
-import { setupI18n } from "./subTasks/i18nInit";
-import { setupPrettier } from "./subTasks/prettierInit";
+import { setupSrcFolder } from "@tasks/aliasesInit";
+import { setupEslint } from "@tasks/eslintInit";
+import { applyGitIgnoreChanges } from "@tasks/gitignoreUpdater";
+import { setupI18n } from "@tasks/i18nInit";
+import { setupPrettier } from "@tasks/prettierInit";
 
 export async function forgeSetup(fullPath: string) {
   const setupTasks = [

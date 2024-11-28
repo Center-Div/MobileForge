@@ -10,10 +10,11 @@
     "allowImportingTsExtensions": true,
     "baseUrl": ".",
     "paths": {
-      "@props/*": ["src/utils/props/*"],
-      "@fonctions/*": ["src/utils/fonctions/*"],
-      "@inputs/*": ["src/utils/inputs/*"],
-      "@inits/*": ["src/utils/initializators/*"]
+      "@commands/*": ["src/commands/*"],
+      "@config/*": ["src/config/*"],
+      "@tasks/*": ["src/tasks/*"],
+      "@cli/*": ["src/cli/*"],
+      "@utils/*": ["src/utils/*"]
     }
   }
 }

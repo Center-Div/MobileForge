@@ -1,6 +1,7 @@
 import inquirer from "inquirer";
 import * as path from "path";
 import * as fs from "fs";
+import { validateAppName } from "@utils/validateAppName";
 
 /**
  * Prompts the user for Expo app details.
@@ -15,8 +16,8 @@ export async function promptAppDetails(): Promise<{
     {
       type: "input",
       name: "appName",
-      message: "What is the name of your new Expo app?",
-      validate: (input) => (input.trim() ? true : "App name cannot be empty."),
+      message: "What is the name of your new Mobile App?",
+      validate: (input) => validateAppName(input),
     },
     {
       type: "input",
