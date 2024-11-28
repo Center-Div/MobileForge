@@ -30,6 +30,14 @@ MobileForge is an open-source, all-in-one starter template designed to help deve
 
 We aim to be THE ultimate Expo template, providing the perfect setup for a seamless development experience. We’re inviting React Native developers to join us in shaping the future of mobile app development.
 
+
+## 🚀 **Get Started**
+
+**Simple as f*ck**: Use the following command to get started quickly:
+```bash
+npx forge-expo-app
+```
+
 ## 🦄 **Current Features**
 
 - **🔧 ESLint Setup**: Pre-configured **ESLint** for consistent and error-free JavaScript/TypeScript code.
