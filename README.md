@@ -4,24 +4,17 @@
 
 <h1 align="center">Mobile Forge</h1>
 
-<table align="center">
-<tbody>
-<tr>
-<td>
-
-[![CenterDiv - MobileForge](https://img.shields.io/static/v1?label=MistaFish&message=MobileForge&color=blue&logo=github)](https://github.com/MistaFish/MobileForge "Go to GitHub repo")
-</td>
-<td>
-
-[![stars - MobileForge](https://img.shields.io/github/stars/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
-</td>
-<td>
-
-[![forks - MobileForge](https://img.shields.io/github/forks/MistaFish/MobileForge?style=social)](https://github.com/MistaFish/MobileForge)
-</td>
-</tr>
-</tbody>
-</table>
+<p align="center">
+  <a href="https://github.com/MistaFish/MobileForge">
+    <img src="https://img.shields.io/static/v1?label=MistaFish&message=MobileForge&color=blue&logo=github" alt="CenterDiv - MobileForge">
+  </a>
+  <a href="https://github.com/MistaFish/MobileForge/stargazers">
+    <img src="https://img.shields.io/github/stars/MistaFish/MobileForge?style=social" alt="stars - MobileForge">
+  </a>
+  <a href="https://github.com/MistaFish/MobileForge/network/members">
+    <img src="https://img.shields.io/github/forks/MistaFish/MobileForge?style=social" alt="forks - MobileForge">
+  </a>
+</p>
 
 
 ## 📖 **Introduction**
