@@ -38,7 +38,7 @@ We aim to be THE ultimate Expo template, providing the perfect setup for a seaml
 npx forge-expo-app
 ```
 
-## 🦄 **Current Features**
+## 🦄 **Current Setups**
 
 - **🔧 ESLint Setup**: Pre-configured **ESLint** for consistent and error-free JavaScript/TypeScript code.
 - **🧹 Prettier Integration**: Automatically formats your code using **Prettier** for better readability and consistency.
@@ -50,3 +50,4 @@ npx forge-expo-app
 
 - **Backend as a Service (BaaS)**: Integration with **Supabase** to provide a fully managed backend solution for user management, database, and more.
 - **Social Authentication**: Adding **Google** and **Apple** login for social authentication.
+- **Adding New Formateur**: Adding **Biome** as an option for formating your code.
