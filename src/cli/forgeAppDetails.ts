@@ -8,7 +8,7 @@ import { validateAppName } from "@utils/validateAppName";
  * @returns {Promise<{ appName: string; appPath: string }>} The app name and path.
  */
 
-export async function promptAppDetails(): Promise<{
+export async function forgeAppDetails(): Promise<{
   appName: string;
   appPath: string;
 }> {

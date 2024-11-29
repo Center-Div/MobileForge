@@ -16,7 +16,7 @@ import { runTaskWithSubtasks } from "@utils/executingTasks";
  */
 
 export async function setupI18n(appPath: string): Promise<void> {
-  const i18nFolderPath = path.resolve(appPath, "i18n");
+  const i18nFolderPath = path.resolve(appPath, "src", "i18n");
   const localesFolderPath = path.resolve(i18nFolderPath, "locales");
   const i18nFilePath = path.resolve(i18nFolderPath, "i18n.ts");
   const enJsonPath = path.resolve(localesFolderPath, "en.json");
@@ -48,6 +48,14 @@ export async function setupI18n(appPath: string): Promise<void> {
       text: "Creating i18n configuration file",
       action: async () => {
         fs.writeFileSync(i18nFilePath, i18nFile);
+      },
+    },
+    {
+      text: "Installing i18n Ally VS Code extension",
+      action: async () => {
+        const vscodeInstallCommand =
+          "code --install-extension lokalise.i18n-ally";
+        await execPromise(vscodeInstallCommand, appPath);
       },
     },
   ];

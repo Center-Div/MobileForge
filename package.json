@@ -1,6 +1,6 @@
 {
   "name": "forge-expo-app",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "author": "Ficherman",
   "keywords": [
     "expo",
@@ -12,6 +12,11 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Center-Div/MobileForge.git"
+  },
+  "homepage": "https://github.com/Center-Div/MobileForge.git#readme",
+  "bugs": {
+    "url": "https://github.com/Center-Div/MobileForge/issues",
+    "email": "gwenaelfichou@gmail.com"
   },
   "scripts": {
     "lint": "tsc",

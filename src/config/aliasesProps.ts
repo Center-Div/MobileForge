@@ -1,5 +1,3 @@
-import { fstat } from "fs";
-
 export const srcFolders = [
   "components",
   "context",

@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 import { displayHeader } from "@cli/headerCli";
-import { showMenu } from "@cli/showMenu";
 import { forgeNewApp } from "@commands/forgeNewApp";
 import chalk from "chalk";
 
