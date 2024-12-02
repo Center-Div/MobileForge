@@ -1,6 +1,7 @@
 {
   "name": "forge-expo-app",
   "version": "0.0.6",
+  "description": "A template for Expo apps with supabase integration",
   "author": "Ficherman",
   "keywords": [
     "expo",
@@ -34,7 +35,7 @@
   "files": [
     "dist"
   ],
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@biomejs/biome": "^1.9.4",
     "chalk": "^5.3.0",
@@ -51,5 +52,9 @@
     "tsup": "^8.3.5",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
-  }
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "private": false
 }
