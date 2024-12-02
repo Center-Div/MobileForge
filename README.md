@@ -19,16 +19,46 @@
 
 ## 📖 **Introduction**
 
-MobileForge is an open-source, all-in-one starter template designed to help developers build mobile apps quickly and efficiently. Built with React Native and Expo for the frontend, and powered by Supabase for the backend (including database, authentication tokens, and more), MobileForge offers a powerful, modular foundation that accelerates development while maintaining high standards for code quality and performance.
+MobileForge is an open-source template builder designed to help developers create custom mobile app templates quickly and efficiently. Built with React Native and Expo for the frontend and powered by Supabase for backend services like database management, authentication, and storage, MobileForge offers flexibility and scalability while maintaining high standards for performance and code quality.
+**Why Mobile Forge ?**
+Unlike traditional templates, which are static and often lack flexibility, MobileForge lets you customize your setup based on your project’s needs. Whether it’s choosing your preferred code formatter, integrating specific backend services, or setting up internationalization, MobileForge ensures your app starts with the ideal foundation.
 
-We aim to be THE ultimate Expo template, providing the perfect setup for a seamless development experience. We’re inviting React Native developers to join us in shaping the future of mobile app development.
+## 🚀 **Quick Start**
 
-
-## 🚀 **Get Started**
-
-**Simple as f*ck**: Use the following command to get started quickly:
+Use the following command to get started quickly:
 ```bash
 npx forge-expo-app
+```
+
+This will set up your project with the structure and configurations you choose. Here’s what the default structure looks like:
+
+```
+my-app/
+├── .vscode/
+├── src/
+│   ├── assets/
+│   ├── clients/
+│   ├── components/
+│   ├── navigation/
+│   ├── utils/
+│   ├── hooks/
+│   ├── context/
+│   ├── screens/
+│   ├── i18n/
+│   ├── App.tsx
+├── index.ts
+├── eslintrc.config.mjs
+├── .prettierrc
+├── tsconfig.json
+├── app.json
+├── babel.config.ts
+├── .env.example
+├── .env.development
+├── .env.test
+├── .env.production
+├── package.json
+├── README.md
+├── makefile
 ```
 
 ## 🦄 **Current Setups**
@@ -44,8 +74,24 @@ npx forge-expo-app
 
 - **🌍 i18n Setup**: Easily initialize **internationalization (i18n)** for multilingual support, including **text localization** and **date formatting**.
 
-## 🛠️ **Roadmap**
+## 🚧 **Roadmap**
 
 - **Backend as a Service (BaaS)**: Integration with **Supabase** to provide a fully managed backend solution for user management, database, and more.
 - **Social Authentication**: Adding **Google** and **Apple** login for social authentication.
 - **Your setups**: contact us for any idea !
+
+---
+
+## 🛠️ **Contributing**  
+This project is just at its beginning, and we are committed to continuously improving it. New features, optimizations, and enhancements are on the way. Stay tuned for regular updates and feel free to contribute to make this template builder even better.
+
+We welcome contributions! Whether it’s bug fixes, feature suggestions, or documentation improvements, feel free to [submit a pull request](https://github.com/MistaFish/MobileForge/pulls).
+---
+
+## **Contact**
+
+For questions or suggestions, reach out via [GitHub Issues](https://github.com/MistaFish/MobileForge/issues).
+
+---
+
+**Let's forge the future of mobile development together!**

@@ -1,84 +1,93 @@
 #!/usr/bin/env node
-var me = Object.defineProperty,
-  fe = Object.defineProperties;
-var ue = Object.getOwnPropertyDescriptors;
-var v = Object.getOwnPropertySymbols;
-var ge = Object.prototype.hasOwnProperty,
-  de = Object.prototype.propertyIsEnumerable;
-var k = (e, t, o) =>
+var ve = Object.defineProperty,
+  Se = Object.defineProperties;
+var be = Object.getOwnPropertyDescriptors;
+var P = Object.getOwnPropertySymbols;
+var Ee = Object.prototype.hasOwnProperty,
+  ke = Object.prototype.propertyIsEnumerable;
+var w = (e, t, n) =>
     t in e
-      ? me(e, t, { enumerable: !0, configurable: !0, writable: !0, value: o })
-      : (e[t] = o),
-  w = (e, t) => {
-    for (var o in t || (t = {})) ge.call(t, o) && k(e, o, t[o]);
-    if (v) for (var o of v(t)) de.call(t, o) && k(e, o, t[o]);
+      ? ve(e, t, { enumerable: !0, configurable: !0, writable: !0, value: n })
+      : (e[t] = n),
+  S = (e, t) => {
+    for (var n in t || (t = {})) Ee.call(t, n) && w(e, n, t[n]);
+    if (P) for (var n of P(t)) ke.call(t, n) && w(e, n, t[n]);
     return e;
   },
-  P = (e, t) => fe(e, ue(t));
-var n = (e, t, o) =>
-  new Promise((i, r) => {
-    var l = (a) => {
+  _ = (e, t) => Se(e, be(t));
+var o = (e, t, n) =>
+  new Promise((i, s) => {
+    var p = (a) => {
         try {
-          g(o.next(a));
-        } catch (f) {
-          r(f);
+          u(n.next(a));
+        } catch (d) {
+          s(d);
         }
       },
-      u = (a) => {
+      f = (a) => {
         try {
-          g(o.throw(a));
-        } catch (f) {
-          r(f);
+          u(n.throw(a));
+        } catch (d) {
+          s(d);
         }
       },
-      g = (a) => (a.done ? i(a.value) : Promise.resolve(a.value).then(l, u));
-    g((o = o.apply(e, t)).next());
+      u = (a) => (a.done ? i(a.value) : Promise.resolve(a.value).then(p, f));
+    u((n = n.apply(e, t)).next());
   });
 import b from "chalk";
-function C() {
+function N() {
   let e = b.red("\u{1F525}"),
     t = b.bold.hex("#FFA500")(" Mobile Forge Active "),
-    o = b.gray(` Ready to forge a new app!
+    n = b.gray(` Ready to forge a new app!
 `);
   console.clear(),
     console.log(`${e} ${t} ${e}`),
-    console.log(o),
+    console.log(n),
     console.log(
       b.gray(`------------------------------------------
-`),
+`)
     );
 }
-import j from "path";
-function F(e, t) {
-  let o = e.trim(),
-    i = j.resolve(t.trim());
-  return j.join(i, o);
+import O from "path";
+function A(e, t) {
+  let n = e.trim(),
+    i = O.resolve(t.trim());
+  return O.join(i, n);
 }
-import { promisify as xe } from "util";
-import ye from "chalk";
-import he from "ora";
-import { exec as be } from "child_process";
-function A(e) {
-  return n(this, null, function* () {
-    let t = xe(be),
-      o = he({ text: "Forging a new Expo app...", color: "cyan" }).start();
+import { promisify as Pe } from "util";
+import we from "chalk";
+import _e from "ora";
+import { exec as Ne } from "child_process";
+function C(e) {
+  return o(this, null, function* () {
+    let t = Pe(Ne),
+      n = _e({ text: "Forging a new Expo app...", color: "cyan" }).start();
     try {
       yield t(`npx create-expo-app@latest "${e}" --template blank-typescript`),
-        o.succeed(`Expo app created successfully!
+        n.succeed(`Expo app created successfully!
 `);
     } catch (i) {
       throw (
-        (o.fail(`Failed to forge the Expo app.
+        (n.fail(`Failed to forge the Expo app.
 `),
-        new Error(`${ye.yellow(i)}`))
+        new Error(`${we.yellow(i)}`))
       );
     }
   });
 }
-import * as s from "fs";
+import Ce from "chalk";
+import * as r from "fs";
 import * as m from "path";
-var E = ["components", "context", "hooks", "navigation", "screens", "utils"],
-  $ = `
+var F = [
+    "components",
+    "context",
+    "hooks",
+    "navigation",
+    "screens",
+    "utils",
+    "clients",
+  ],
+  R = `
 module.exports = function (api: { cache: (arg0: boolean) => void }) {
   api.cache(true);
   return {
@@ -102,7 +111,7 @@ module.exports = function (api: { cache: (arg0: boolean) => void }) {
   };
 };
 `,
-  I = {
+  j = {
     "@assets/*": ["src/assets/*"],
     "@components/*": ["src/components/*"],
     "@context/*": ["src/context/*"],
@@ -111,7 +120,7 @@ module.exports = function (api: { cache: (arg0: boolean) => void }) {
     "@screens/*": ["src/screens/*"],
     "@utils/*": ["src/utils/*"],
   },
-  R = `
+  D = `
 import { registerRootComponent } from "expo";
 import App from "./src/App";
 
@@ -120,105 +129,104 @@ import App from "./src/App";
 // the environment is set up appropriately
 registerRootComponent(App);
 `;
-import Se from "ora";
-import d from "chalk";
+import Oe from "ora";
+import g from "chalk";
 function c(e, t) {
-  return n(this, null, function* () {
-    console.log(`${d.cyan(e)}...`);
-    try {
-      for (let o = 0; o < t.length; o++) {
-        let i = t[o],
-          r = Se({
-            text: `${d.yellow("|___")} ${i.text}`,
-            color: "yellow",
-          }).start();
+  return o(this, null, function* () {
+    console.log(`${g.cyan(e)}...`);
+    let n = t.map((i) =>
+      o(this, null, function* () {
+        let s = Oe({
+          text: `${g.yellow("|___")} ${i.text}`,
+          color: "yellow",
+        }).start();
         try {
-          yield i.action(), r.succeed(`${d.yellow("|___")} ${i.text}`);
-        } catch (l) {
+          yield i.action(), s.succeed(`${g.yellow("|___")} ${i.text}`);
+        } catch (p) {
           throw (
-            (r.fail(`${d.yellow("|___")} ${d.red(i.text)}`),
-            console.error("Error:", l),
-            new Error("Stopping due to failure in subtask."))
+            (s.fail(`${g.yellow("|___")} ${g.red(i.text)}`),
+            new Error(`Stopping due to failure in subtask: ${g.red(i.text)}`))
           );
         }
-      }
-      console.log(`${e} ${d.green("completed successfully!")}
+      })
+    );
+    try {
+      yield Promise.all(n),
+        console.log(`${e} ${g.green("completed successfully!")}
 `);
-    } catch (o) {
-      console.log(`${d.red(e)} failed.
-`),
-        console.error("Error:", o);
+    } catch (i) {
+      throw i;
     }
   });
 }
-function L(e) {
-  return n(this, null, function* () {
+function $(e) {
+  return o(this, null, function* () {
     let t = m.join(e, "src"),
-      o = m.join(e, "App.tsx"),
+      n = m.join(e, "App.tsx"),
       i = m.join(t, "App.tsx"),
-      r = m.join(e, "babel.config.ts"),
-      l = m.join(e, "tsconfig.json"),
-      u = m.join(e, "index.ts");
+      s = m.join(e, "babel.config.ts"),
+      p = m.join(e, "tsconfig.json"),
+      f = m.join(e, "index.ts");
     yield c("Setting up folder structure and aliases", [
       {
         text: "Creating `src` folder and subfolders",
         action: () =>
-          n(this, null, function* () {
-            s.existsSync(t) || s.mkdirSync(t);
-            for (let a of E) {
-              let f = m.join(t, a);
-              s.existsSync(f) || s.mkdirSync(f);
+          o(this, null, function* () {
+            r.existsSync(t) || r.mkdirSync(t);
+            for (let a of F) {
+              let d = m.join(t, a);
+              r.existsSync(d) || r.mkdirSync(d);
             }
           }),
       },
       {
         text: "Moving App.tsx to `src` folder",
         action: () =>
-          n(this, null, function* () {
-            s.existsSync(o) && s.renameSync(o, i);
+          o(this, null, function* () {
+            r.existsSync(n) && r.renameSync(n, i);
           }),
       },
       {
         text: "Moving existing `assets` folder into `src`",
         action: () =>
-          n(this, null, function* () {
+          o(this, null, function* () {
             let a = m.join(e, "assets"),
-              f = m.join(t, "assets");
-            s.existsSync(a) && s.renameSync(a, f);
+              d = m.join(t, "assets");
+            r.existsSync(a) && r.renameSync(a, d);
           }),
       },
       {
         text: "Updating `index.ts` to reference `src/App`",
         action: () =>
-          n(this, null, function* () {
-            s.writeFileSync(u, R.trim());
+          o(this, null, function* () {
+            r.writeFileSync(f, D.trim());
           }),
       },
       {
         text: "Creating and configuring `babel.config.ts`",
         action: () =>
-          n(this, null, function* () {
-            s.writeFileSync(r, $.trim());
+          o(this, null, function* () {
+            r.writeFileSync(s, R.trim());
           }),
       },
       {
         text: "Updating `tsconfig.json` with path aliases",
         action: () =>
-          n(this, null, function* () {
-            let a = JSON.parse(s.readFileSync(l, "utf-8"));
-            (a.compilerOptions = P(w({}, a.compilerOptions), {
+          o(this, null, function* () {
+            let a = JSON.parse(r.readFileSync(p, "utf-8"));
+            (a.compilerOptions = _(S({}, a.compilerOptions), {
               baseUrl: "./",
-              paths: I,
+              paths: j,
             })),
-              s.writeFileSync(l, JSON.stringify(a, null, 2));
+              r.writeFileSync(p, JSON.stringify(a, null, 2));
           }),
       },
     ]);
   });
 }
 import * as T from "fs";
-import * as O from "path";
-var W = [
+import * as U from "path";
+var I = [
     "eslint",
     "prettier",
     "eslint-plugin-prettier",
@@ -229,7 +237,7 @@ var W = [
     "eslint-plugin-react",
     "eslint-plugin-react-native",
   ].join(" "),
-  N = `import globals from "globals";
+  V = `import globals from "globals";
 import pluginJs from "@eslint/js";
 import tseslint from "typescript-eslint";
 import pluginReact from "eslint-plugin-react";
@@ -264,46 +272,46 @@ export default [
   },
 ];
   `;
-import { exec as ve } from "child_process";
-function p(e, t) {
-  return new Promise((o, i) => {
-    ve(e, { cwd: t }, (r, l, u) => {
-      if (r)
-        throw (i(`Error executing command: ${u || r.message}`), new Error());
-      o(l);
+import { exec as Ae } from "child_process";
+function l(e, t) {
+  return new Promise((n, i) => {
+    Ae(e, { cwd: t }, (s, p, f) => {
+      if (s)
+        throw (i(`Error executing command: ${f || s.message}`), new Error());
+      n(p);
     });
   });
 }
-function _(e) {
-  return n(this, null, function* () {
-    let t = O.resolve(e, "eslint.config.mjs");
+function L(e) {
+  return o(this, null, function* () {
+    let t = U.resolve(e, "eslint.config.mjs");
     yield c("Setting up ESLint", [
       {
         text: "Installing ESLint dependencies",
         action: () =>
-          n(this, null, function* () {
-            let i = `npm install --save-dev ${W}`;
-            yield p(i, e);
+          o(this, null, function* () {
+            let i = `npm install --save-dev ${I}`;
+            yield l(i, e);
           }),
       },
       {
         text: "Creating ESLint configuration",
         action: () =>
-          n(this, null, function* () {
-            T.writeFileSync(t, N, "utf-8");
+          o(this, null, function* () {
+            T.writeFileSync(t, V, "utf-8");
           }),
       },
       {
         text: "Running ESLint with --fix",
         action: () =>
-          n(this, null, function* () {
-            yield p("npx eslint . --fix", e);
+          o(this, null, function* () {
+            yield l("npx eslint . --fix", e);
           }),
       },
     ]);
   });
 }
-var z = `
+var W = `
 # dependencies
 node_modules/
 
@@ -368,28 +376,28 @@ database.types.ts
 !.vscode/settings.json
 `;
 import * as B from "fs";
-function J(e) {
-  return n(this, null, function* () {
+function M(e) {
+  return o(this, null, function* () {
     yield c("Updating .gitignore file", [
       {
         text: "Writing .gitignore content",
         action: () =>
-          n(this, null, function* () {
-            B.writeFileSync(`${e}/.gitignore`, z, "utf8");
+          o(this, null, function* () {
+            B.writeFileSync(`${e}/.gitignore`, W, "utf8");
           }),
       },
     ]);
   });
 }
-import * as y from "path";
-import * as x from "fs";
-var U = [
+import * as x from "path";
+import * as h from "fs";
+var J = [
     "i18next",
     "react-i18next",
     "expo-localization",
     "@types/react-i18next",
   ].join(" "),
-  V = `import i18n from 'i18next';
+  X = `import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 import * as Localization from 'expo-localization';
 import en from './locales/en.json';
@@ -421,57 +429,57 @@ i18n
 
 export default i18n;
 `,
-  q = `{
+  z = `{
   "welcome": "Welcome",
   "description": "This is an example app."
 }`,
-  M = `{
+  G = `{
   "welcome": "Bienvenue",
   "description": "Ceci est une application exemple."
 }`;
-function D(e) {
-  return n(this, null, function* () {
-    let t = y.resolve(e, "src", "i18n"),
-      o = y.resolve(t, "locales"),
-      i = y.resolve(t, "i18n.ts"),
-      r = y.resolve(o, "en.json"),
-      l = y.resolve(o, "fr.json");
+function K(e) {
+  return o(this, null, function* () {
+    let t = x.resolve(e, "src", "i18n"),
+      n = x.resolve(t, "locales"),
+      i = x.resolve(t, "i18n.ts"),
+      s = x.resolve(n, "en.json"),
+      p = x.resolve(n, "fr.json");
     yield c("Setting up i18n", [
       {
         text: "Installing i18n dependencies",
         action: () =>
-          n(this, null, function* () {
-            let g = `npm install ${U}`;
-            yield p(g, e);
+          o(this, null, function* () {
+            let u = `npm install ${J}`;
+            yield l(u, e);
           }),
       },
       {
         text: "Creating i18n folder structure",
         action: () =>
-          n(this, null, function* () {
-            x.mkdirSync(t, { recursive: !0 }),
-              x.mkdirSync(o, { recursive: !0 });
+          o(this, null, function* () {
+            h.mkdirSync(t, { recursive: !0 }),
+              h.mkdirSync(n, { recursive: !0 });
           }),
       },
       {
         text: "Adding translation files",
         action: () =>
-          n(this, null, function* () {
-            x.writeFileSync(r, q), x.writeFileSync(l, M);
+          o(this, null, function* () {
+            h.writeFileSync(s, z), h.writeFileSync(p, G);
           }),
       },
       {
         text: "Creating i18n configuration file",
         action: () =>
-          n(this, null, function* () {
-            x.writeFileSync(i, V);
+          o(this, null, function* () {
+            h.writeFileSync(i, X);
           }),
       },
       {
         text: "Installing i18n Ally VS Code extension",
         action: () =>
-          n(this, null, function* () {
-            yield p("code --install-extension lokalise.i18n-ally", e);
+          o(this, null, function* () {
+            yield l("code --install-extension lokalise.i18n-ally", e);
           }),
       },
     ]);
@@ -479,7 +487,7 @@ function D(e) {
 }
 import * as H from "fs";
 import * as Q from "path";
-var G = {
+var q = {
   arrowParens: "always",
   bracketSpacing: !0,
   jsxSingleQuote: !1,
@@ -489,24 +497,24 @@ var G = {
   printWidth: 100,
   trailingComma: "es5",
 };
-function K(e) {
-  return n(this, null, function* () {
+function Y(e) {
+  return o(this, null, function* () {
     let t = Q.resolve(e, ".prettierrc");
     yield c("Setting up Prettier", [
       {
         text: "Writing Prettier configuration file",
         action: () =>
-          n(this, null, function* () {
-            H.writeFileSync(t, JSON.stringify(G, null, 2), "utf-8");
+          o(this, null, function* () {
+            H.writeFileSync(t, JSON.stringify(q, null, 2), "utf-8");
           }),
       },
     ]);
   });
 }
-import * as Y from "fs";
-import * as ee from "path";
+import * as te from "fs";
+import * as oe from "path";
 var Z = ["@biomejs/biome"].join(" "),
-  X = `{
+  ee = `{
   "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
   "vcs": {
     "enabled": false,
@@ -544,52 +552,52 @@ var Z = ["@biomejs/biome"].join(" "),
   }
 }
 `;
-function te(e) {
-  return n(this, null, function* () {
-    let t = ee.resolve(e, "biome.json");
+function ne(e) {
+  return o(this, null, function* () {
+    let t = oe.resolve(e, "biome.json");
     yield c("Setting up Biome", [
       {
         text: "Installing Biome dependencies",
         action: () =>
-          n(this, null, function* () {
+          o(this, null, function* () {
             let i = `npm install --save-dev ${Z}`;
-            yield p(i, e);
+            yield l(i, e);
           }),
       },
       {
         text: "Running Biome initialization",
         action: () =>
-          n(this, null, function* () {
-            yield p("npx @biomejs/biome init", e);
+          o(this, null, function* () {
+            yield l("npx @biomejs/biome init", e);
           }),
       },
       {
         text: "Installing Biome VS Code extension",
         action: () =>
-          n(this, null, function* () {
-            yield p("code --install-extension biomejs.biome", e);
+          o(this, null, function* () {
+            yield l("code --install-extension biomejs.biome", e);
           }),
       },
       {
         text: "Updating biome.json configuration",
         action: () =>
-          n(this, null, function* () {
-            Y.writeFileSync(t, X);
+          o(this, null, function* () {
+            te.writeFileSync(t, ee);
           }),
       },
       {
         text: "Running Biome formatting",
         action: () =>
-          n(this, null, function* () {
-            yield p("npx @biomejs/biome check --write", e);
+          o(this, null, function* () {
+            yield l("npx @biomejs/biome check --write", e);
           }),
       },
     ]);
   });
 }
-import * as h from "fs";
-import * as S from "path";
-function oe(e) {
+import * as y from "fs";
+import * as k from "path";
+function ie(e) {
   let t = {
     "i18n-ally.localesPaths": ["src/i18n/locales"],
     "i18n-ally.keystyle": "nested",
@@ -607,55 +615,201 @@ function oe(e) {
     t
   );
 }
-function ne(e, t) {
-  return n(this, null, function* () {
-    let o = S.resolve(e, ".vscode"),
-      i = S.resolve(o, "settings.json");
+function se(e, t) {
+  return o(this, null, function* () {
+    let n = k.resolve(e, ".vscode"),
+      i = k.resolve(n, "settings.json");
     yield c("Setting up VS Code settings", [
       {
         text: "Creating .vscode folder",
         action: () =>
-          n(this, null, function* () {
-            h.existsSync(o) || h.mkdirSync(o, { recursive: !0 });
+          o(this, null, function* () {
+            y.existsSync(n) || y.mkdirSync(n, { recursive: !0 });
           }),
       },
       {
         text: "Creating VS Code settings.json",
         action: () =>
-          n(this, null, function* () {
-            h.writeFileSync(i, JSON.stringify(oe(t), null, 2), "utf-8");
+          o(this, null, function* () {
+            y.writeFileSync(i, JSON.stringify(ie(t), null, 2), "utf-8");
           }),
       },
     ]);
   });
 }
-function ie(e, t) {
-  return n(this, null, function* () {
-    let o = [
-      { name: "Updating .gitignore", action: J },
-      { name: "Setting up i18n", action: D },
-      { name: "Setting up folder structure and aliases", action: L },
-      { name: "Setting up vscode settings", action: () => ne(e, t) },
+import * as E from "path";
+import * as v from "fs";
+var re = `
+# SUPABASE API KEYS
+EXPO_PUBLIC_URL_IPHONE=
+EXPO_PUBLIC_URL_ANDROID=
+EXPO_PUBLIC_API_ANON_KEY=
+`,
+  ae = [".env.example", ".env.development", ".env.test", ".env.production"],
+  ce = {
+    "android:dev": "NODE_ENV=dev npx expo run:android",
+    "ios:dev": "NODE_ENV=dev npx expo run:ios",
+    "android:stage": "NODE_ENV=test npx expo run:android",
+    "ios:stage": "NODE_ENV=test npx expo run:ios",
+    "android:prod": "NODE_ENV=production npx expo run:android",
+    "ios:prod": "NODE_ENV=production npx expo run:ios",
+  },
+  pe = ["ios", "web", "android"],
+  le = `
+# ===============================
+# Makefile for managing Expo commands
+# ===============================
+
+# Define environment variables for clarity
+NODE_ENV_DEV = development
+NODE_ENV_STAGE = test
+NODE_ENV_PROD = production
+
+# Define common commands
+EXPO_RUN_IOS = npx expo run:ios
+EXPO_RUN_ANDROID = npx expo run:android
+
+# ===============================
+# Default target
+# ===============================
+# This is the default goal when no specific target is provided to 'make'
+.DEFAULT_GOAL := help
+
+# ===============================
+# Help command - Displays all available commands
+# ===============================
+help:
+	@echo "Makefile for running Expo commands"
+	@echo ""
+	@echo "Available targets:"
+	@echo "  install        - Run the command npm install"
+	@echo "  ios_dev       - Run iOS app in dev mode"
+	@echo "  android_dev   - Run Android app in dev mode"
+	@echo "  ios_stage     - Run iOS app in stage mode"
+	@echo "  android_stage - Run Android app in stage mode"
+	@echo "  ios_prod      - Run iOS app in prod mode"
+	@echo "  android_prod  - Run Android app in prod mode"
+	@echo ""
+	@echo "Set NODE_ENV to control the environment for each command."
+
+
+# ===============================
+# Project Commands
+# ===============================
+#This target runs an intallation of the package.json
+install:
+	npm install
+
+# ===============================
+# iOS Commands
+# ===============================
+# This target runs the iOS app in development mode
+ios_dev:
+	@echo "Running iOS in development mode..."
+	$(MAKE) install
+	@NODE_ENV=$(NODE_ENV_DEV) $(EXPO_RUN_IOS)
+
+# This target runs the iOS app in staging mode
+ios_stage:
+	@echo "Running iOS in staging mode..."
+	$(MAKE) install
+	@NODE_ENV=$(NODE_ENV_STAGE) $(EXPO_RUN_IOS)
+
+# This target runs the iOS app in production mode
+ios_prod:
+	@echo "Running iOS in production mode..."
+	$(MAKE) install
+	@NODE_ENV=$(NODE_ENV_PROD) $(EXPO_RUN_IOS)
+
+
+# ===============================
+# Android Commands
+# ===============================
+# This target runs the Android app in development mode
+android_dev:
+	@echo "Running Android in development mode..."
+	$(MAKE) install
+	@NODE_ENV=$(NODE_ENV_DEV) $(EXPO_RUN_ANDROID)
+
+# This target runs the Android app in staging mode
+android_stage:
+	@echo "Running Android in staging mode..."
+	$(MAKE) install
+	@NODE_ENV=$(NODE_ENV_STAGE) $(EXPO_RUN_ANDROID)
+
+# This target runs the Android app in production mode
+android_prod:
+	@echo "Running Android in production mode..."
+	$(MAKE) install
+	@NODE_ENV=$(NODE_ENV_PROD) $(EXPO_RUN_ANDROID)
+`;
+function me(e) {
+  return o(this, null, function* () {
+    let t = E.resolve(e, "makefile");
+    yield c("Setting up .env", [
+      {
+        text: "Creating Env File",
+        action: () =>
+          o(this, null, function* () {
+            for (let i of ae) {
+              let s = E.resolve(e, i);
+              v.writeFileSync(s, re, "utf-8");
+            }
+          }),
+      },
+      {
+        text: "Generating new scripts in package.json",
+        action: () =>
+          o(this, null, function* () {
+            let i = E.resolve(e, "package.json"),
+              s = JSON.parse(v.readFileSync(i, "utf-8"));
+            pe.forEach((p) => {
+              delete s.scripts[p];
+            }),
+              (s.scripts = S(S({}, s.scripts), ce)),
+              v.writeFileSync(i, JSON.stringify(s, null, 2), "utf-8");
+          }),
+      },
+      {
+        text: "Generating makefile",
+        action: () =>
+          o(this, null, function* () {
+            v.writeFileSync(t, le, "utf-8");
+          }),
+      },
+    ]);
+  });
+}
+function de(e, t) {
+  return o(this, null, function* () {
+    let n = [
+      { name: "Updating .gitignore", action: M },
+      { name: "Setting up i18n", action: K },
+      { name: "Setting up folder structure and aliases", action: $ },
+      { name: "Setting up vscode settings", action: () => se(e, t) },
+      { name: "Setting up .env", action: () => me(e) },
     ];
     if (t === "prettier-eslint")
-      o.push(
-        { name: "Setting up Prettier", action: K },
-        { name: "Setting up ESLint", action: _ },
+      n.push(
+        { name: "Setting up Prettier", action: Y },
+        { name: "Setting up ESLint", action: L }
       );
-    else if (t === "biome") o.push({ name: "Setting up Biome", action: te });
+    else if (t === "biome") n.push({ name: "Setting up Biome", action: ne });
     else throw new Error("Unknown formatter choice.");
-    for (let i of o)
+    for (let i of n)
       try {
         yield i.action(e);
-      } catch (r) {
-        throw new Error(`"Error creating Expo app during ${i.name}: ${r}`);
+      } catch (s) {
+        throw new Error(
+          `"Error creating Expo app during ${Ce.yellow(i.name)}: ${s}`
+        );
       }
   });
 }
-import ke from "inquirer";
-import * as re from "path";
-import * as ae from "fs";
-function se(e) {
+import Fe from "inquirer";
+import * as ue from "path";
+import * as ge from "fs";
+function fe(e) {
   let t = e.trim();
   return t
     ? /\s/.test(t)
@@ -667,14 +821,14 @@ function se(e) {
           : !0
     : "App name cannot be empty.";
 }
-function ce() {
-  return n(this, null, function* () {
-    return ke.prompt([
+function he() {
+  return o(this, null, function* () {
+    return Fe.prompt([
       {
         type: "input",
         name: "appName",
         message: "What is the name of your new Mobile App?",
-        validate: (e) => se(e),
+        validate: (e) => fe(e),
       },
       {
         type: "input",
@@ -683,48 +837,49 @@ function ce() {
           "Where do you want to create your new Mobile App? (Provide full path)",
         default: process.cwd(),
         validate: (e) => {
-          let t = re.resolve(e.trim());
-          return ae.existsSync(t) ? !0 : "Provided path does not exist.";
+          let t = ue.resolve(e.trim());
+          return ge.existsSync(t) ? !0 : "Provided path does not exist.";
         },
       },
     ]);
   });
 }
-import we from "inquirer";
-function le() {
-  return n(this, null, function* () {
-    let { formatterChoice: e } = yield we.prompt([
-      {
-        type: "list",
-        name: "formatterChoice",
-        message: "Which formatting tool do you want to use?",
-        choices: [
-          { name: "Prettier + ESLint", value: "prettier-eslint" },
-          { name: "Biome", value: "biome" },
-        ],
-      },
-    ]);
-    return { formatterChoice: e };
+import Re from "inquirer";
+function xe() {
+  return o(this, null, function* () {
+    let e = [
+        { name: "Prettier + ESLint", value: "prettier-eslint" },
+        { name: "Biome", value: "biome" },
+      ],
+      { formatterChoice: t } = yield Re.prompt([
+        {
+          type: "list",
+          name: "formatterChoice",
+          message: "Which formatting tool do you want to use?",
+          choices: e,
+        },
+      ]);
+    return { formatterChoice: t };
   });
 }
-function pe() {
-  return n(this, null, function* () {
-    let { appName: e, appPath: t } = yield ce(),
-      { formatterChoice: o } = yield le(),
-      i = F(e, t);
-    yield A(i), yield ie(i, o);
+function ye() {
+  return o(this, null, function* () {
+    let { appName: e, appPath: t } = yield he(),
+      { formatterChoice: n } = yield xe(),
+      i = A(e, t);
+    yield C(i), yield de(i, n);
   });
 }
-import Pe from "chalk";
-function Ce() {
+import je from "chalk";
+function De() {
   return new Promise(() => {
-    C(), pe();
+    N(), ye();
   });
 }
-Ce()
+De()
   .then(() => {
     console.log("App ran successfully.");
   })
   .catch((e) => {
-    console.error(Pe.red("An error occurred:"), e);
+    console.error(je.red("An error occurred:"), e);
   });
