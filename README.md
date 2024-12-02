@@ -23,6 +23,10 @@ MobileForge is an open-source template builder designed to help developers creat
 **Why Mobile Forge ?**
 Unlike traditional templates, which are static and often lack flexibility, MobileForge lets you customize your setup based on your project’s needs. Whether it’s choosing your preferred code formatter, integrating specific backend services, or setting up internationalization, MobileForge ensures your app starts with the ideal foundation.
 
+<p align="center">
+  <img src="https://uiynobtgxeipmodzdjdy.supabase.co/storage/v1/object/public/publicFolder/Forging-ezgif.com-video-to-gif-converter.gif" alt="MobileForge Intro" width="50%" />
+</p>
+
 ## 🚀 **Quick Start**
 
 Use the following command to get started quickly:
