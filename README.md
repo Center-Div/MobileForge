@@ -16,7 +16,6 @@
   </a>
 </p>
 
-
 ## 📖 **Introduction**
 
 MobileForge is an open-source template builder designed to help developers create custom mobile app templates quickly and efficiently. Built with React Native and Expo for the frontend and powered by Supabase for backend services like database management, authentication, and storage, MobileForge offers flexibility and scalability while maintaining high standards for performance and code quality.
@@ -26,6 +25,7 @@ Unlike traditional templates, which are static and often lack flexibility, Mobil
 ## 🚀 **Quick Start**
 
 Use the following command to get started quickly:
+
 ```bash
 npx forge-expo-app
 ```
@@ -66,7 +66,8 @@ my-app/
 - **🛠️ Formatter Setup**: Ensure consistent code quality and readability with your preferred setup:
   - **Prettier + ESLint**: A powerful combination for linting and formatting JavaScript/TypeScript code.
   - **Biome**: An all-in-one solution for linting, formatting, and more.
-- **📂 Project Structure**: 
+- **📂 Project Structure**:
+
   - **Folder Structure**: Organized folder structure for scalability and maintainability.
   - **Aliases**: Simplified module imports with **aliases** to avoid relative paths and improve code clarity.
 
@@ -82,10 +83,12 @@ my-app/
 
 ---
 
-## 🛠️ **Contributing**  
+## 🛠️ **Contributing**
+
 This project is just at its beginning, and we are committed to continuously improving it. New features, optimizations, and enhancements are on the way. Stay tuned for regular updates and feel free to contribute to make this template builder even better.
 
 We welcome contributions! Whether it’s bug fixes, feature suggestions, or documentation improvements, feel free to [submit a pull request](https://github.com/MistaFish/MobileForge/pulls).
+
 ---
 
 ## **Contact**
