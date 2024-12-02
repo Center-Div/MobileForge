@@ -1,39 +1,31 @@
-import ora from "ora";
 import chalk from "chalk";
+import ora from "ora";
 
-/**
- * A helper function that runs a task with multiple subtasks, showing progress for each.
- * @param mainTask - The main task text that will be displayed.
- * @param subtasks - An array of subtasks with a text and action function.
- */
 export async function runTaskWithSubtasks(
   mainTask: string,
-  subtasks: { text: string; action: () => Promise<void> }[],
+  subtasks: { text: string; action: () => Promise<void> }[]
 ): Promise<void> {
   console.log(`${chalk.cyan(mainTask)}...`);
 
-  const subtaskPromises = subtasks.map(async (subtask) => {
+  // Using a for...of loop to ensure each subtask is awaited before starting the next
+  for (const subtask of subtasks) {
     const subtaskSpinner = ora({
       text: `${chalk.yellow("|___")} ${subtask.text}`,
       color: "yellow",
     }).start();
 
     try {
+      // Wait for the action to complete before moving on
       await subtask.action();
       subtaskSpinner.succeed(`${chalk.yellow("|___")} ${subtask.text}`);
     } catch (error) {
       subtaskSpinner.fail(`${chalk.yellow("|___")} ${chalk.red(subtask.text)}`);
-      // Print the error with the subtask name
+      // Log and stop further execution on failure
       throw new Error(
-        `Stopping due to failure in subtask: ${chalk.red(subtask.text)}`,
+        `Stopping due to failure in subtask: ${chalk.red(subtask.text)}`
       );
     }
-  });
-
-  try {
-    await Promise.all(subtaskPromises); // Execute all subtasks concurrently
-    console.log(`${mainTask} ${chalk.green("completed successfully!")}\n`);
-  } catch (error) {
-    throw error;
   }
+
+  console.log(`${mainTask} ${chalk.green("completed successfully!")}\n`);
 }

@@ -1,8 +1,7 @@
-import { execPromise } from "src/utils/execPromise";
-import { promisify } from "util";
+import { promisify } from "node:util";
 import chalk from "chalk";
 import ora from "ora";
-import { exec } from "child_process";
+import { exec } from "node:child_process";
 
 export async function forgeExpoApp(fullPath: string) {
   const execPromise = promisify(exec);
@@ -12,9 +11,8 @@ export async function forgeExpoApp(fullPath: string) {
   }).start();
 
   try {
-    // Run the Expo app creation command
     await execPromise(
-      `npx create-expo-app@latest "${fullPath}" --template blank-typescript`,
+      `npx create-expo-app@latest "${fullPath}" --template blank-typescript`
     );
     spinner.succeed("Expo app created successfully!\n");
   } catch (error) {

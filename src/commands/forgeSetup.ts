@@ -6,7 +6,7 @@ import { setupI18n } from "@tasks/i18nInit";
 import { setupPrettier } from "@tasks/prettierInit";
 import { setupBiome } from "@tasks/biomeInit";
 import { setupVSCode } from "@tasks/vscodeInit";
-import { FormatterChoice } from "src/types/inputs";
+import type { FormatterChoice } from "src/types/inputs";
 import { setupEnv } from "@tasks/envInit";
 
 /**
@@ -17,7 +17,7 @@ import { setupEnv } from "@tasks/envInit";
 
 export async function forgeSetup(
   appPath: string,
-  formatterChoice: FormatterChoice,
+  formatterChoice: FormatterChoice
 ) {
   const setupTasks = [
     { name: "Updating .gitignore", action: applyGitIgnoreChanges },
@@ -38,8 +38,8 @@ export async function forgeSetup(
 
   if (formatterChoice === "prettier-eslint") {
     setupTasks.push(
-      { name: "Setting up Prettier", action: setupPrettier },
-      { name: "Setting up ESLint", action: setupEslint },
+      { name: "Setting up Prettier", action: () => setupPrettier(appPath) },
+      { name: "Setting up ESLint", action: () => setupEslint(appPath) }
     );
   } else if (formatterChoice === "biome") {
     setupTasks.push({ name: "Setting up Biome", action: setupBiome });
@@ -52,7 +52,7 @@ export async function forgeSetup(
       await task.action(appPath);
     } catch (error) {
       throw new Error(
-        `"Error creating Expo app during ${chalk.yellow(task.name)}: ${error}`,
+        `"Error creating Expo app during ${chalk.yellow(task.name)}: ${error}`
       );
     }
   }
