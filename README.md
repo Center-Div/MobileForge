@@ -19,6 +19,7 @@
 ## 📖 **Introduction**
 
 MobileForge is an open-source template builder designed to help developers create custom mobile app templates quickly and efficiently. Built with React Native and Expo for the frontend and powered by Supabase for backend services like database management, authentication, and storage, MobileForge offers flexibility and scalability while maintaining high standards for performance and code quality.
+
 **Why Mobile Forge ?**
 Unlike traditional templates, which are static and often lack flexibility, MobileForge lets you customize your setup based on your project’s needs. Whether it’s choosing your preferred code formatter, integrating specific backend services, or setting up internationalization, MobileForge ensures your app starts with the ideal foundation.
 
