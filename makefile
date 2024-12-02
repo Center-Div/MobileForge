@@ -14,6 +14,9 @@ help:
 	@echo "Available targets:"
 	@echo "  biome        - Run the biome formater and correct"
 	@echo "  test         - Run the program locally"
+	@echo "  bundle       - Bundle the program for npm"
+	@echo "  publish_npm  - Publish package to npm"
+
 	@echo ""
 
 # ===============================
@@ -25,3 +28,9 @@ biome:
 
 test:
 	npm run dev
+
+bundle:
+	npm run build 
+
+publish_npm:
+	npm publish 
