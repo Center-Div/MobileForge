@@ -10,7 +10,7 @@ import { getVscodeSettings } from "@config/vscodeProps";
  */
 export async function setupVSCode(
   appPath: string,
-  formatterChoice: string
+  formatterChoice: string,
 ): Promise<void> {
   const vscodeFolderPath = path.resolve(appPath, ".vscode");
   const settingsFilePath = path.resolve(vscodeFolderPath, "settings.json");
@@ -30,7 +30,7 @@ export async function setupVSCode(
       fs.writeFileSync(
         settingsFilePath,
         JSON.stringify(getVscodeSettings(formatterChoice), null, 2),
-        "utf-8"
+        "utf-8",
       );
     },
   };

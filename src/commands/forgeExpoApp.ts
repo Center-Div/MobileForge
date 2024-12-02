@@ -14,7 +14,7 @@ export async function forgeExpoApp(fullPath: string) {
   try {
     // Run the Expo app creation command
     await execPromise(
-      `npx create-expo-app@latest "${fullPath}" --template blank-typescript`
+      `npx create-expo-app@latest "${fullPath}" --template blank-typescript`,
     );
     spinner.succeed("Expo app created successfully!\n");
   } catch (error) {

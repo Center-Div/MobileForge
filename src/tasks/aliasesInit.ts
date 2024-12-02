@@ -83,6 +83,6 @@ export async function setupSrcFolder(appPath: string): Promise<void> {
 
   await runTaskWithSubtasks(
     "Setting up folder structure and aliases",
-    subtasks
+    subtasks,
   );
 }

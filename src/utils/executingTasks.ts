@@ -8,7 +8,7 @@ import chalk from "chalk";
  */
 export async function runTaskWithSubtasks(
   mainTask: string,
-  subtasks: { text: string; action: () => Promise<void> }[]
+  subtasks: { text: string; action: () => Promise<void> }[],
 ): Promise<void> {
   console.log(`${chalk.cyan(mainTask)}...`);
 
@@ -25,7 +25,7 @@ export async function runTaskWithSubtasks(
       subtaskSpinner.fail(`${chalk.yellow("|___")} ${chalk.red(subtask.text)}`);
       // Print the error with the subtask name
       throw new Error(
-        `Stopping due to failure in subtask: ${chalk.red(subtask.text)}`
+        `Stopping due to failure in subtask: ${chalk.red(subtask.text)}`,
       );
     }
   });

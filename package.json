@@ -2,13 +2,7 @@
   "name": "forge-expo-app",
   "version": "0.0.5",
   "author": "Ficherman",
-  "keywords": [
-    "expo",
-    "supabase",
-    "template",
-    "mobile",
-    "application"
-  ],
+  "keywords": ["expo", "supabase", "template", "mobile", "application"],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Center-Div/MobileForge.git"
@@ -31,11 +25,10 @@
   "bin": {
     "forge-expo-app": "dist/index.js"
   },
-  "files": [
-    "dist"
-  ],
+  "files": ["dist"],
   "license": "ISC",
   "dependencies": {
+    "@biomejs/biome": "^1.9.4",
     "chalk": "^5.3.0",
     "fs": "^0.0.1-security",
     "inquirer": "^12.1.0",

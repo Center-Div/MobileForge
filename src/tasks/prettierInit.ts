@@ -19,7 +19,7 @@ export async function setupPrettier(appPath: string): Promise<void> {
         fs.writeFileSync(
           prettierConfigPath,
           JSON.stringify(prettierConfig, null, 2),
-          "utf-8"
+          "utf-8",
         );
       },
     },

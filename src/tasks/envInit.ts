@@ -27,7 +27,7 @@ export async function setupEnv(appPath: string): Promise<void> {
       action: async () => {
         const packageJsonPath = path.resolve(appPath, "package.json");
         const packageJson = JSON.parse(
-          fs.readFileSync(packageJsonPath, "utf-8")
+          fs.readFileSync(packageJsonPath, "utf-8"),
         );
 
         scritpsPackageRemove.forEach((script) => {
@@ -41,7 +41,7 @@ export async function setupEnv(appPath: string): Promise<void> {
         fs.writeFileSync(
           packageJsonPath,
           JSON.stringify(packageJson, null, 2),
-          "utf-8"
+          "utf-8",
         );
       },
     },

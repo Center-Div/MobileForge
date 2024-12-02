@@ -4,7 +4,6 @@ import { eslintFile, eslintPackages } from "@config/eslintProps";
 import { execPromise } from "@utils/execPromise";
 import { runTaskWithSubtasks } from "@utils/executingTasks";
 
-
 /**
  * Sets up ESLint configuration in the specified application path.
  * @param appPath - The absolute path to the application directory.
