@@ -36,9 +36,13 @@ npx forge-expo-app
 - **🛠️ Formatter Setup**: Ensure consistent code quality and readability with your preferred setup:
   - **Prettier + ESLint**: A powerful combination for linting and formatting JavaScript/TypeScript code.
   - **Biome**: An all-in-one solution for linting, formatting, and more.
-- **📂 Folder Structure**: Organized folder structure for scalability and maintainability.
-- **🛠️ Aliases**: Simplified module imports with **aliases** to avoid relative paths and improve code clarity.
-- **🌐 i18n Setup**: Easily initialize **internationalization (i18n)** for multilingual support, including **text localization** and **date formatting**.
+- **📂 Project Structure**: 
+  - **Folder Structure**: Organized folder structure for scalability and maintainability.
+  - **Aliases**: Simplified module imports with **aliases** to avoid relative paths and improve code clarity.
+
+- **🌐 Environment Files & Makefile**: Configured environment files (`.env.example`, `.env.development`, `.env.test`, etc.) for different stages (development, stage, production), integrated with a **Makefile** to streamline environment setup and execution.
+
+- **🌍 i18n Setup**: Easily initialize **internationalization (i18n)** for multilingual support, including **text localization** and **date formatting**.
 
 ## 🛠️ **Roadmap**
 

@@ -12,28 +12,28 @@ export async function runTaskWithSubtasks(
 ): Promise<void> {
   console.log(`${chalk.cyan(mainTask)}...`);
 
-  try {
-    for (let i = 0; i < subtasks.length; i++) {
-      const subtask = subtasks[i];
-      const subtaskSpinner = ora({
-        text: `${chalk.yellow("|___")} ${subtask.text}`,
-        color: "yellow",
-      }).start();
+  const subtaskPromises = subtasks.map(async (subtask) => {
+    const subtaskSpinner = ora({
+      text: `${chalk.yellow("|___")} ${subtask.text}`,
+      color: "yellow",
+    }).start();
 
-      try {
-        await subtask.action();
-        subtaskSpinner.succeed(`${chalk.yellow("|___")} ${subtask.text}`);
-      } catch (error) {
-        subtaskSpinner.fail(
-          `${chalk.yellow("|___")} ${chalk.red(subtask.text)}`
-        );
-        console.error("Error:", error);
-        throw new Error("Stopping due to failure in subtask.");
-      }
+    try {
+      await subtask.action();
+      subtaskSpinner.succeed(`${chalk.yellow("|___")} ${subtask.text}`);
+    } catch (error) {
+      subtaskSpinner.fail(`${chalk.yellow("|___")} ${chalk.red(subtask.text)}`);
+      // Print the error with the subtask name
+      throw new Error(
+        `Stopping due to failure in subtask: ${chalk.red(subtask.text)}`
+      );
     }
+  });
+
+  try {
+    await Promise.all(subtaskPromises); // Execute all subtasks concurrently
     console.log(`${mainTask} ${chalk.green("completed successfully!")}\n`);
   } catch (error) {
-    console.log(`${chalk.red(mainTask)} failed.\n`);
-    console.error("Error:", error);
+    throw error;
   }
 }

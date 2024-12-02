@@ -8,7 +8,7 @@ import { getVscodeSettings } from "@config/vscodeProps";
  * Creates the .vscode folder and a settings.json file inside the specified application path.
  * @param appPath - The absolute path to the application directory.
  */
-export async function vscodeSetup(
+export async function setupVSCode(
   appPath: string,
   formatterChoice: string
 ): Promise<void> {

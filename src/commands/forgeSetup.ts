@@ -5,8 +5,9 @@ import { applyGitIgnoreChanges } from "@tasks/gitignoreUpdater";
 import { setupI18n } from "@tasks/i18nInit";
 import { setupPrettier } from "@tasks/prettierInit";
 import { setupBiome } from "@tasks/biomeInit";
-import { vscodeSetup } from "@tasks/vscodeInit";
-import { FormatterChoice } from "@utils/types/inputs";
+import { setupVSCode } from "@tasks/vscodeInit";
+import { FormatterChoice } from "src/types/inputs";
+import { setupEnv } from "@tasks/envInit";
 
 /**
  * Function to set up the app with selected options like formatter and database type.
@@ -27,7 +28,11 @@ export async function forgeSetup(
     },
     {
       name: "Setting up vscode settings",
-      action: () => vscodeSetup(appPath, formatterChoice),
+      action: () => setupVSCode(appPath, formatterChoice),
+    },
+    {
+      name: "Setting up .env",
+      action: () => setupEnv(appPath),
     },
   ];
 
@@ -46,7 +51,9 @@ export async function forgeSetup(
     try {
       await task.action(appPath);
     } catch (error) {
-      throw new Error(`"Error creating Expo app during ${task.name}: ${error}`);
+      throw new Error(
+        `"Error creating Expo app during ${chalk.yellow(task.name)}: ${error}`
+      );
     }
   }
 }
