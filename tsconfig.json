@@ -16,5 +16,6 @@
       "@cli/*": ["src/cli/*"],
       "@utils/*": ["src/utils/*"]
     }
-  }
+  },
+  "include": ["src/**/*"]
 }

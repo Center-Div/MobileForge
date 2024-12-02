@@ -6,6 +6,7 @@ import { setupI18n } from "@tasks/i18nInit";
 import { setupPrettier } from "@tasks/prettierInit";
 import { setupBiome } from "@tasks/biomeInit";
 import { vscodeSetup } from "@tasks/vscodeInit";
+import { FormatterChoice } from "@utils/types/inputs";
 
 /**
  * Function to set up the app with selected options like formatter and database type.
@@ -13,7 +14,10 @@ import { vscodeSetup } from "@tasks/vscodeInit";
  * @param {string} formatterChoice - The chosen formatter (either "prettier-eslint" or "biome").
  */
 
-export async function forgeSetup(appPath: string, formatterChoice: string) {
+export async function forgeSetup(
+  appPath: string,
+  formatterChoice: FormatterChoice
+) {
   const setupTasks = [
     { name: "Updating .gitignore", action: applyGitIgnoreChanges },
     { name: "Setting up i18n", action: setupI18n },

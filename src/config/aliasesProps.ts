@@ -5,6 +5,7 @@ export const srcFolders = [
   "navigation",
   "screens",
   "utils",
+  "clients",
 ];
 
 export const babelConfigContent = `
