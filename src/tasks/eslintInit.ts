@@ -14,12 +14,6 @@ export async function setupEslint(appPath: string): Promise<void> {
 
   const subtasks = [
     {
-      text: "Installing ESLint dependencies AIEIAIEA ",
-      action: async () => {
-        console.log("ici");
-      },
-    },
-    {
       text: "Installing ESLint dependencies",
       action: async () => {
         const installCommand = `npm install --save-dev ${eslintPackages}`;
