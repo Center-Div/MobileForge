@@ -1,4 +1,4 @@
-import { FormatterChoice } from "src/types/inputs";
+import type { FormatterChoice } from "src/types/inputs";
 import inquirer from "inquirer";
 
 export async function forgeSetupsSelection(): Promise<{

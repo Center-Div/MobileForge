@@ -9,7 +9,7 @@ export const srcFolders = [
 ];
 
 export const babelConfigContent = `
-module.exports = function (api: { cache: (arg0: boolean) => void }) {
+module.exports = (api: { cache: (arg0: boolean) => void }) => {
   api.cache(true);
   return {
     presets: ["babel-preset-expo"],

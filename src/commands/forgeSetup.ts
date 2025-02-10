@@ -8,6 +8,7 @@ import { setupBiome } from "@tasks/biomeInit";
 import { setupVSCode } from "@tasks/vscodeInit";
 import type { FormatterChoice } from "src/types/inputs";
 import { setupEnv } from "@tasks/envInit";
+import updateAppJson from "@tasks/updateAppJson";
 
 /**
  * Function to set up the app with selected options like formatter and database type.
@@ -33,6 +34,10 @@ export async function forgeSetup(
     {
       name: "Setting up .env",
       action: () => setupEnv(appPath),
+    },
+    {
+      name: "Updating app.json asset paths",
+      action: () => updateAppJson(appPath),
     },
   ];
 
